@@ -20,7 +20,7 @@ namespace VkClientCsharp
             InitializeComponent();
         }        
         Form2 f2 = new Form2();
-
+        LoginError f3 = new LoginError();
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
 
@@ -47,7 +47,7 @@ namespace VkClientCsharp
             }
             catch (VkApiAuthorizationException)
             {
-
+                f3.Show();
             }
         }
 
