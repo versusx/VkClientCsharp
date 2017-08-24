@@ -18,6 +18,8 @@ namespace VkClientCsharp
         {
             InitializeComponent();
         }
+        Form1 f1 = new Form1();
+        Form2 f2 = new Form2();
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
@@ -38,10 +40,17 @@ namespace VkClientCsharp
                 Password = pass,
                 Settings = scope
             });
+            f2.Show();
+            f1.Close();
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
