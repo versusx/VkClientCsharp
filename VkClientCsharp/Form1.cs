@@ -42,13 +42,15 @@ namespace VkClientCsharp
                     Password = pass,
                     Settings = scope
                 });
+                Form1.ActiveForm.Hide();
                 f2.Show();
-                Close();
+                
             }
             catch (VkApiAuthorizationException)
             {
                 f3.Show();
             }
+            
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
