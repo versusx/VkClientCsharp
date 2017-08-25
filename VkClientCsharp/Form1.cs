@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using VkNet;
 using VkNet.Enums.Filters;
 using VkNet.Exception;
+using VkNet.Model.RequestParams;
 
 namespace VkClientCsharp
 {
@@ -18,10 +19,12 @@ namespace VkClientCsharp
         public Form1()
         {
             InitializeComponent();
+            
+
         }        
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
-
+                
         }
         VkApi vk = new VkApi();
         public void button1_Click(object sender, EventArgs e)
@@ -48,6 +51,23 @@ namespace VkClientCsharp
             }
             authentication.Parent = null;
             Friends.Visible = true;
+            var profileInfo = vk.Account.GetProfileInfo();
+            //var thisProfile = vk.Users.Get(userId: vk.UserId.Value, fields: ProfileFields.FirstName | ProfileFields.LastName);
+            label3.Text = profileInfo.FirstName + " " + profileInfo.LastName;
+            
+            var photos = vk.Photo.Get(new PhotoGetParams
+            {
+                OwnerId = vk.UserId.Value
+            });
+            
+            var online = vk.Friends.GetOnline(new FriendsGetOnlineParams
+            {
+                UserId = vk.UserId.Value
+            });
+            foreach(var item in online)
+            {
+                
+            }
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -72,6 +92,11 @@ namespace VkClientCsharp
         private void allFrinedsList_SelectedIndexChanged(object sender, EventArgs e)
         {
             
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
