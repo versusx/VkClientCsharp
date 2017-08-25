@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
@@ -45,6 +46,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.feedTab = new System.Windows.Forms.TabPage();
             this.Default.SuspendLayout();
             this.authentication.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -107,6 +109,7 @@
             this.Default.Controls.Add(this.tabPage2);
             this.Default.Controls.Add(this.tabPage1);
             this.Default.Controls.Add(this.tabPage3);
+            this.Default.Controls.Add(this.feedTab);
             this.Default.Location = new System.Drawing.Point(12, 12);
             this.Default.Name = "Default";
             this.Default.SelectedIndex = 0;
@@ -230,12 +233,23 @@
             this.label4.TabIndex = 2;
             this.label4.Text = "label4";
             // 
+            // feedTab
+            // 
+            this.feedTab.Location = new System.Drawing.Point(4, 22);
+            this.feedTab.Name = "feedTab";
+            this.feedTab.Padding = new System.Windows.Forms.Padding(3);
+            this.feedTab.Size = new System.Drawing.Size(426, 266);
+            this.feedTab.TabIndex = 4;
+            this.feedTab.Text = "Feed";
+            this.feedTab.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(458, 309);
             this.Controls.Add(this.Default);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "Vk";
             this.Default.ResumeLayout(false);
@@ -270,6 +284,7 @@
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TabPage feedTab;
     }
 }
 
