@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using VkNet;
+using VkNet.Enums;
 using VkNet.Enums.Filters;
 using VkNet.Exception;
 using VkNet.Model.RequestParams;
@@ -52,26 +53,32 @@ namespace VkClientCsharp
             authentication.Parent = null;
             Friends.Visible = true;
             var profileInfo = vk.Account.GetProfileInfo();
-            label3.Text = profileInfo.FirstName + " " + profileInfo.LastName;
+            nameLabel.Text = profileInfo.FirstName + " " + profileInfo.LastName;
             var photos = vk.Photo.Get(new PhotoGetParams
             {
                 OwnerId = vk.UserId.Value,
                 AlbumId = VkNet.Enums.SafetyEnums.PhotoAlbumType.Profile
             });
-            
+            var friends = vk.Friends.Get(vk.UserId.Value, fields: ProfileFields.FirstName | ProfileFields.LastName);
+            int friendsCount = friends.Count;            
+            friendsCnt.Text = "Всего друзей " + Convert.ToString(friendsCount);            
             var online = vk.Friends.GetOnline(new FriendsGetOnlineParams
             {
                 UserId = vk.UserId.Value
             });
             foreach(var item in online)
             {
-                onlineFriends.Text  = item.ToString();
+                
             }
             var wall = vk.Wall.Get(new WallGetParams
             {
                 OwnerId = vk.UserId.Value,
                 Count = 30
             });
+/*            var msg = vk.Messages.Get(new MessagesGetParams
+            {
+                Filters = MessagesFilter.All
+            });*/
             
         }
 
