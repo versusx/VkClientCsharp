@@ -63,8 +63,12 @@ namespace VkClientCsharp
             foreach (var fCount in friends)
             {
                 FriendsList.Items.Add(fCount.FirstName + fCount.LastName);
+                if (Convert.ToBoolean(fCount.Online))
+                {
+                    onlineFriendsList.Items.Add(fCount.FirstName + fCount.LastName);
+                }
             }
-            
+                        
             int friendsCount = friends.Count;            
             friendsCnt.Text = "Всего друзей " + Convert.ToString(friendsCount);            
             var online = vk.Friends.GetOnline(new FriendsGetOnlineParams
