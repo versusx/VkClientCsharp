@@ -39,19 +39,23 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.Friends = new System.Windows.Forms.TabControl();
             this.allFrineds = new System.Windows.Forms.TabPage();
+            this.friendsCnt = new System.Windows.Forms.Label();
             this.allFrinedsList = new System.Windows.Forms.ListBox();
             this.onlineFriends = new System.Windows.Forms.TabPage();
+            this.friendsOnlineCnt = new System.Windows.Forms.Label();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.nameLabel = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.feedTab = new System.Windows.Forms.TabPage();
-            this.friendsCnt = new System.Windows.Forms.Label();
+            this.FriendsList = new System.Windows.Forms.ListBox();
+            this.onlineFriendsList = new System.Windows.Forms.ListBox();
             this.Default.SuspendLayout();
             this.authentication.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.Friends.SuspendLayout();
             this.allFrineds.SuspendLayout();
+            this.onlineFriends.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -170,6 +174,7 @@
             // 
             // allFrineds
             // 
+            this.allFrineds.Controls.Add(this.FriendsList);
             this.allFrineds.Controls.Add(this.friendsCnt);
             this.allFrineds.Controls.Add(this.allFrinedsList);
             this.allFrineds.Location = new System.Drawing.Point(4, 22);
@@ -179,6 +184,15 @@
             this.allFrineds.TabIndex = 0;
             this.allFrineds.Text = "All";
             this.allFrineds.UseVisualStyleBackColor = true;
+            // 
+            // friendsCnt
+            // 
+            this.friendsCnt.AutoSize = true;
+            this.friendsCnt.Location = new System.Drawing.Point(16, 12);
+            this.friendsCnt.Name = "friendsCnt";
+            this.friendsCnt.Size = new System.Drawing.Size(66, 13);
+            this.friendsCnt.TabIndex = 1;
+            this.friendsCnt.Text = "friendsCount";
             // 
             // allFrinedsList
             // 
@@ -191,6 +205,8 @@
             // 
             // onlineFriends
             // 
+            this.onlineFriends.Controls.Add(this.onlineFriendsList);
+            this.onlineFriends.Controls.Add(this.friendsOnlineCnt);
             this.onlineFriends.Location = new System.Drawing.Point(4, 22);
             this.onlineFriends.Name = "onlineFriends";
             this.onlineFriends.Padding = new System.Windows.Forms.Padding(3);
@@ -198,6 +214,15 @@
             this.onlineFriends.TabIndex = 1;
             this.onlineFriends.Text = "Online";
             this.onlineFriends.UseVisualStyleBackColor = true;
+            // 
+            // friendsOnlineCnt
+            // 
+            this.friendsOnlineCnt.AutoSize = true;
+            this.friendsOnlineCnt.Location = new System.Drawing.Point(7, 7);
+            this.friendsOnlineCnt.Name = "friendsOnlineCnt";
+            this.friendsOnlineCnt.Size = new System.Drawing.Size(96, 13);
+            this.friendsOnlineCnt.TabIndex = 0;
+            this.friendsOnlineCnt.Text = "friendsOnlineCount";
             // 
             // tabPage1
             // 
@@ -214,7 +239,7 @@
             // nameLabel
             // 
             this.nameLabel.AutoSize = true;
-            this.nameLabel.Location = new System.Drawing.Point(143, 7);
+            this.nameLabel.Location = new System.Drawing.Point(130, 3);
             this.nameLabel.Name = "nameLabel";
             this.nameLabel.Size = new System.Drawing.Size(59, 13);
             this.nameLabel.TabIndex = 1;
@@ -249,14 +274,21 @@
             this.feedTab.Text = "Feed";
             this.feedTab.UseVisualStyleBackColor = true;
             // 
-            // friendsCnt
+            // FriendsList
             // 
-            this.friendsCnt.AutoSize = true;
-            this.friendsCnt.Location = new System.Drawing.Point(16, 12);
-            this.friendsCnt.Name = "friendsCnt";
-            this.friendsCnt.Size = new System.Drawing.Size(66, 13);
-            this.friendsCnt.TabIndex = 1;
-            this.friendsCnt.Text = "friendsCount";
+            this.FriendsList.FormattingEnabled = true;
+            this.FriendsList.Location = new System.Drawing.Point(6, 29);
+            this.FriendsList.Name = "FriendsList";
+            this.FriendsList.Size = new System.Drawing.Size(393, 199);
+            this.FriendsList.TabIndex = 2;
+            // 
+            // onlineFriendsList
+            // 
+            this.onlineFriendsList.FormattingEnabled = true;
+            this.onlineFriendsList.Location = new System.Drawing.Point(-1, 24);
+            this.onlineFriendsList.Name = "onlineFriendsList";
+            this.onlineFriendsList.Size = new System.Drawing.Size(406, 212);
+            this.onlineFriendsList.TabIndex = 1;
             // 
             // Form1
             // 
@@ -274,6 +306,8 @@
             this.Friends.ResumeLayout(false);
             this.allFrineds.ResumeLayout(false);
             this.allFrineds.PerformLayout();
+            this.onlineFriends.ResumeLayout(false);
+            this.onlineFriends.PerformLayout();
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -301,6 +335,9 @@
         private System.Windows.Forms.Label nameLabel;
         private System.Windows.Forms.TabPage feedTab;
         private System.Windows.Forms.Label friendsCnt;
+        private System.Windows.Forms.Label friendsOnlineCnt;
+        private System.Windows.Forms.ListBox FriendsList;
+        private System.Windows.Forms.ListBox onlineFriendsList;
     }
 }
 

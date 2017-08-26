@@ -44,14 +44,14 @@ namespace VkClientCsharp
                     Settings = scope
                 });
                 var setOnline = vk.Account.SetOnline();
+                authentication.Parent = null;
+                Friends.Visible = true;
             }
             catch (VkApiAuthorizationException)
             {
                 LoginError f3 = new LoginError();
                 f3.Show();
             }
-            authentication.Parent = null;
-            Friends.Visible = true;
             var profileInfo = vk.Account.GetProfileInfo();
             nameLabel.Text = profileInfo.FirstName + " " + profileInfo.LastName;
             var photos = vk.Photo.Get(new PhotoGetParams
@@ -59,26 +59,26 @@ namespace VkClientCsharp
                 OwnerId = vk.UserId.Value,
                 AlbumId = VkNet.Enums.SafetyEnums.PhotoAlbumType.Profile
             });
-            var friends = vk.Friends.Get(vk.UserId.Value, fields: ProfileFields.FirstName | ProfileFields.LastName);
+            var friends = vk.Friends.Get(vk.UserId.Value,order: VkNet.Enums.SafetyEnums.FriendsOrder.Hints,fields: ProfileFields.FirstName | ProfileFields.LastName);
+            foreach (var fCount in friends)
+            {
+                FriendsList.Items.Add(fCount.FirstName + fCount.LastName);
+                
+            }
             int friendsCount = friends.Count;            
             friendsCnt.Text = "Всего друзей " + Convert.ToString(friendsCount);            
             var online = vk.Friends.GetOnline(new FriendsGetOnlineParams
             {
                 UserId = vk.UserId.Value
             });
-            foreach(var item in online)
-            {
-                
-            }
+            int friendsOnlineCount = online.Count;
+            friendsOnlineCnt.Text = Convert.ToString(friendsOnlineCount) + "/" + Convert.ToString(friendsCount);
             var wall = vk.Wall.Get(new WallGetParams
             {
                 OwnerId = vk.UserId.Value,
                 Count = 30
             });
-/*            var msg = vk.Messages.Get(new MessagesGetParams
-            {
-                Filters = MessagesFilter.All
-            });*/
+            
             
         }
 
