@@ -11,6 +11,7 @@ using VkNet;
 using VkNet.Enums;
 using VkNet.Enums.Filters;
 using VkNet.Exception;
+using VkNet.Model;
 using VkNet.Model.RequestParams;
 
 namespace VkClientCsharp
@@ -59,6 +60,10 @@ namespace VkClientCsharp
                 OwnerId = vk.UserId.Value,
                 AlbumId = VkNet.Enums.SafetyEnums.PhotoAlbumType.Profile
             });
+            foreach (var avatar in photos)
+            {
+                
+            }
             var friends = vk.Friends.Get(vk.UserId.Value,order: VkNet.Enums.SafetyEnums.FriendsOrder.Hints,fields: ProfileFields.FirstName | ProfileFields.LastName);
             foreach (var fCount in friends)
             {
@@ -82,8 +87,12 @@ namespace VkClientCsharp
                 OwnerId = vk.UserId.Value,
                 Count = 30
             });
-            
-            
+            var msg = vk.Messages.Get(new MessagesGetParams
+            {
+
+            });
+            Status status = vk.Status.Get(vk.UserId.Value);
+            labelStatus.Text = Convert.ToString(status);
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)

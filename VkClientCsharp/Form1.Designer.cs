@@ -39,17 +39,18 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.Friends = new System.Windows.Forms.TabControl();
             this.allFrineds = new System.Windows.Forms.TabPage();
+            this.FriendsList = new System.Windows.Forms.ListBox();
             this.friendsCnt = new System.Windows.Forms.Label();
             this.allFrinedsList = new System.Windows.Forms.ListBox();
             this.onlineFriends = new System.Windows.Forms.TabPage();
+            this.onlineFriendsList = new System.Windows.Forms.ListBox();
             this.friendsOnlineCnt = new System.Windows.Forms.Label();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.nameLabel = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.feedTab = new System.Windows.Forms.TabPage();
-            this.FriendsList = new System.Windows.Forms.ListBox();
-            this.onlineFriendsList = new System.Windows.Forms.ListBox();
+            this.labelStatus = new System.Windows.Forms.Label();
             this.Default.SuspendLayout();
             this.authentication.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -185,6 +186,14 @@
             this.allFrineds.Text = "All";
             this.allFrineds.UseVisualStyleBackColor = true;
             // 
+            // FriendsList
+            // 
+            this.FriendsList.FormattingEnabled = true;
+            this.FriendsList.Location = new System.Drawing.Point(6, 29);
+            this.FriendsList.Name = "FriendsList";
+            this.FriendsList.Size = new System.Drawing.Size(393, 199);
+            this.FriendsList.TabIndex = 2;
+            // 
             // friendsCnt
             // 
             this.friendsCnt.AutoSize = true;
@@ -215,6 +224,14 @@
             this.onlineFriends.Text = "Online";
             this.onlineFriends.UseVisualStyleBackColor = true;
             // 
+            // onlineFriendsList
+            // 
+            this.onlineFriendsList.FormattingEnabled = true;
+            this.onlineFriendsList.Location = new System.Drawing.Point(-1, 24);
+            this.onlineFriendsList.Name = "onlineFriendsList";
+            this.onlineFriendsList.Size = new System.Drawing.Size(406, 212);
+            this.onlineFriendsList.TabIndex = 1;
+            // 
             // friendsOnlineCnt
             // 
             this.friendsOnlineCnt.AutoSize = true;
@@ -226,6 +243,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.labelStatus);
             this.tabPage1.Controls.Add(this.nameLabel);
             this.tabPage1.Controls.Add(this.pictureBox1);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
@@ -274,21 +292,14 @@
             this.feedTab.Text = "Feed";
             this.feedTab.UseVisualStyleBackColor = true;
             // 
-            // FriendsList
+            // labelStatus
             // 
-            this.FriendsList.FormattingEnabled = true;
-            this.FriendsList.Location = new System.Drawing.Point(6, 29);
-            this.FriendsList.Name = "FriendsList";
-            this.FriendsList.Size = new System.Drawing.Size(393, 199);
-            this.FriendsList.TabIndex = 2;
-            // 
-            // onlineFriendsList
-            // 
-            this.onlineFriendsList.FormattingEnabled = true;
-            this.onlineFriendsList.Location = new System.Drawing.Point(-1, 24);
-            this.onlineFriendsList.Name = "onlineFriendsList";
-            this.onlineFriendsList.Size = new System.Drawing.Size(406, 212);
-            this.onlineFriendsList.TabIndex = 1;
+            this.labelStatus.AutoSize = true;
+            this.labelStatus.Location = new System.Drawing.Point(133, 20);
+            this.labelStatus.Name = "labelStatus";
+            this.labelStatus.Size = new System.Drawing.Size(35, 13);
+            this.labelStatus.TabIndex = 2;
+            this.labelStatus.Text = "status";
             // 
             // Form1
             // 
@@ -338,6 +349,7 @@
         private System.Windows.Forms.Label friendsOnlineCnt;
         private System.Windows.Forms.ListBox FriendsList;
         private System.Windows.Forms.ListBox onlineFriendsList;
+        private System.Windows.Forms.Label labelStatus;
     }
 }
 
